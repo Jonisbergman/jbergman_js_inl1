@@ -1,0 +1,208 @@
+:root {   
+    --clr-error: #db1010;
+    --clr-sucess: #14ac06;   
+  } 
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px 100px;
+    flex-direction: column;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;    
+    background-color: #044758;
+    z-index: -1;
+   
+}
+
+.field-box {
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+}
+
+.right {
+    padding: 25px 40px;
+}
+
+.left {
+    height: 100%;
+    background: url("/img/eclogo.jpg") no-repeat center;
+    background-size: cover;
+}
+
+h2 {
+    position: relative;
+    padding-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: #10657B;
+}
+
+.field {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-color: rgba(230, 230, 230, 0.6);
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+}
+
+.field:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.field:focus{
+    background-color: #fff;
+    border: 2px solid rgba(30, 85, 250, 0.47);
+}
+
+
+.btn {
+    width: 100%;
+    padding:0.5rem 1rem;
+    font-size: 1.1rem;
+    background-color: #10657B;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #fff;
+    transition: .3s;
+}
+
+.btn-icon {
+    border: none;
+    cursor: pointer;
+    margin: 0.5rem;
+    margin-top: 15px;
+   font-size: 2rem;   
+   background-color: #fff;
+   color: #474747;
+   
+}
+
+.btn:hover{
+    background-color: #1d95b3;
+}
+
+.user-card {
+    /* display: flex; */
+    height: 180px;
+    width: 360px;
+    background-color: #fff;
+    margin-top: 3rem;
+    text-align: center;;
+    border-radius: 4px;  
+    border: transparent;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+}
+
+.user-card, h3 ,h2 {
+    margin-top: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.is-valid .form-control {
+    border: 1px solid var(--clr-sucess);
+    outline: 1px solid var(--clr-sucess);
+}
+
+.is-invalid .form-control {
+    border: 1px solid var(--clr-error);
+    outline: 1px solid var(--clr-error);
+}
+
+.input-group .invalid-input {
+    margin-top: .2rem;
+    color: var(--clr-error);
+    font-size: .9rem;
+    display: none; 
+}
+  
+.is-invalid .invalid-input {
+    display: block;  
+}
+
+.animate {
+    animation: slide-in 0.5s ease-out;
+}
+
+.slideout {
+    animation: slide-out 0.5s ease-out;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out {
+    from{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
+
+@media screen and (max-width:880px){
+    .field-box{
+        grid-template-columns: 1fr;
+    }
+    .left{
+        height: 200px;
+    }
+}
